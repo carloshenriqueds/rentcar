@@ -8,8 +8,8 @@ services:
         ports:
             - 5432:5432
         environment:
-            - POSTGRES_USER=docker
-            - POSTGRES_PASSWOROD=ignite
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWOROD=docker
             - POSTGRES_DB=rentx
             - POSTGRES_HOST_AUTH_METHOD=trust
         volumes:
