@@ -1,4 +1,4 @@
-import { Specification } from "../../model/Specification";
+import { Specification } from "../../entities/Specification";
 import { ISpecificationRepository, ISpecificationRepositoryDTO } from "../ISpecificationRepository";
 
 
@@ -9,8 +9,8 @@ class SpecificationsRepository implements ISpecificationRepository {
     constructor() {
         this.specificationsList = []
     }
-    findByName(name: string): Specification {
-        return this.specificationsList.find(category => category.name === name);
+    findByName(name: string): Specification | undefined {
+        return this.specificationsList.find(specificationObj => specificationObj.name === name);
     }
 
     create({ name, description }: ISpecificationRepositoryDTO): void {
