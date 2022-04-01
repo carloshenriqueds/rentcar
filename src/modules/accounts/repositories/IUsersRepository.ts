@@ -8,5 +8,4 @@ interface IUsersRepository {
     findById(id: string): Promise<User | undefined>;
 }
 
-
 export { IUsersRepository }
