@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "test": "jest"
   },
   "author": "",
@@ -19,6 +19,7 @@
     "bcryptjs": "^2.4.3",
     "csv-parse": "^5.0.4",
     "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.4",
     "pg": "^8.5.1",
@@ -46,6 +47,7 @@
     "jest": "^27.5.1",
     "prettier": "^2.6.0",
     "ts-jest": "^27.1.4",
-    "ts-node-dev": "^1.1.8"
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.14.1"
   }
 }

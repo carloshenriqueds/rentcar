@@ -1,6 +1,7 @@
+import { AppError } from "@errors/AppError";
+import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { inject } from "tsyringe";
-import { AppError } from "../../../../errors/AppError";
-import { IUsersRepository } from "../../repositories/IUsersRepository";
+
 
 interface IRequest {
     user_id: string;
@@ -17,7 +18,7 @@ class UpdateUserAvatarUseCase {
         const user = await this.usersRepository.findById(user_id);
 
         if (!user) {
-            throw new AppError("User does not exists!");s
+            throw new AppError("User does not exists!");
         }
         
         user.avatar = avatarFile;

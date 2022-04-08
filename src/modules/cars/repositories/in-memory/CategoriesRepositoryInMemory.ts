@@ -1,12 +1,13 @@
-import { Category } from "../../entities/Category";
+
+import { Category } from "../../infra/typeorm/entities/Category";
 import { ICategoriesRepositoryDTO, ICategoryRepository } from "../ICategoryRepository";
 
 
 class CategoriesRepositoryInMemory implements ICategoryRepository {
+  
     categories: Category[] = [];
 
-
-    async findByName(name: string): Promise<any> | Promise<any> {
+    async findByName(name: string): Promise<any> {
         const category = this.categories.find((category) => category.name === name);
         return category;
     }
